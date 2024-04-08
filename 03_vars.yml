@@ -43,14 +43,12 @@
       ansible.builtin.shell: uptime
 
 
-
-
-#- name: demo on registered variables
-#  hosts: all
-#  tasks:
-#    - name: run uptime shell command
-#      ansible.builtin.shell: uptime
-#      register: output
-#    - name: print output
-#      ansible.built.debug:
-#        msg: "{{ output }}"
+- name: demo on registered variables 1
+  hosts: all
+  tasks:
+    - name: run uptime shell command
+      ansible.builtin.shell: uptime
+      register: output
+    - name: print output
+      ansible.built.debug:
+        msg: "{{ output }}"
