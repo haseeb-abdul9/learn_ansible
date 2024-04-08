@@ -1,3 +1,4 @@
+#4
 - name: Demo on play level variables
   hosts: all
   vars:
@@ -7,7 +8,7 @@
       ansible.builtin.debug:
         msg: URL - {{ url }}
 
-
+#2
 - name: Demo on task level variables
   hosts: all
   tasks:
@@ -17,7 +18,7 @@
       vars:
         url: tasks.example.com
 
-
+#3
 - name: load vars from file
   hosts: all
   vars_files:
@@ -34,3 +35,22 @@
     url_play: role.example.com
   roles:
     - sample
+
+- name: demo on registered variables
+  hosts: all
+  tasks:
+    - name: run uptime shell command
+      ansible.builtin.shell: uptime
+
+
+
+
+#- name: demo on registered variables
+#  hosts: all
+#  tasks:
+#    - name: run uptime shell command
+#      ansible.builtin.shell: uptime
+#      register: output
+#    - name: print output
+#      ansible.built.debug:
+#        msg: "{{ output }}"
