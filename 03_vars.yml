@@ -16,3 +16,13 @@
         msg: URL - {{ url }}
       vars:
         url: tasks.example.com
+
+
+- name: load vars from file
+  hosts: all
+  vars_file:
+    - exvars.yml
+  tasks:
+    - name: print url
+      ansible.builtin.debug:
+        msg: URL - {{ url }}
