@@ -4,4 +4,4 @@
   tasks:
     - name: print facts
       ansible.builtin.debug:
-        msg: arch - {{ ansible-ansible_architecture }}
+        msg: arch - {{ ansible_architecture }}
