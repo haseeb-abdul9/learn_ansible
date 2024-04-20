@@ -2,6 +2,6 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: print facr
+    - name: print facts
       ansible.builtin.debug:
         msg: arch - {{ ansible-ansible_architecture }}
